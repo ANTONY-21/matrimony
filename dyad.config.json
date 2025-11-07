@@ -1,0 +1,57 @@
+{
+  "codebaseContext": {
+    "include": [
+      "src/**/*.{ts,tsx,js,jsx}",
+      "apps/**/*.{ts,tsx,js,jsx}",
+      "packages/**/src/**/*.{ts,tsx,js,jsx}",
+      "server/**/*.{ts,js}",
+      "lib/**/*.{ts,tsx,js,jsx}",
+      "pages/**/*.{ts,tsx,js,jsx}",
+      "public/**/*.json",
+      "config/**/*.json",
+      "scripts/**/*.py",
+      "migrations/**/*.sql"
+    ],
+    "exclude": [
+      "node_modules/**",
+      "dist/**",
+      "build/**",
+      ".next/**",
+      "out/**",
+      ".cache/**",
+      "coverage/**",
+      "logs/**",
+      "tmp/**",
+      "*.lock",
+      "**/*.map"
+    ]
+  },
+  "search": {
+    "maxFilesReturned": 200,
+    "maxFileSizeKB": 512
+  },
+  "languageOverrides": {
+    "typescript": {
+      "extensions": [".ts", ".tsx"],
+      "rootPaths": ["src", "packages"]
+    },
+    "python": {
+      "extensions": [".py"],
+      "rootPaths": ["scripts", "tools"]
+    }
+  },
+  "sensitiveFiles": {
+    "patterns": [
+      ".env",
+      ".env.*",
+      "secrets/**",
+      "keys/**",
+      "private/**"
+    ],
+    "masking": true
+  },
+  "performance": {
+    "followSymlinks": false,
+    "preloadIndex": true
+  }
+}
